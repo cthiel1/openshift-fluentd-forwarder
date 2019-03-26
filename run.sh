@@ -15,7 +15,8 @@ echo "Running fluentd as user ${USER_NAME} (${USER_ID})"
 # copy openshift configmap templte if avaiable, otherwise use built-in template
 if [ -f /tmp/fluentd-config/fluentd.conf ]; then
     echo "Using OpenShift ConfigMap configuration"
-    cat /tmp/fluentd-config/fluentd.conf | envsubst > /etc/fluent/fluentd.conf
+    #cat /tmp/fluentd-config/fluentd.conf | envsubst > /etc/fluent/fluentd.conf
+    cp /tmp/fluentd-config/fluentd.conf /etc/fluent/fluentd.conf
 else 
     echo "Using Docker image configuration"
     cat ~/fluentd.conf.template | envsubst > /etc/fluent/fluentd.conf
