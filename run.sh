@@ -45,9 +45,9 @@ else
 fi
 
 # set up IPADDR for fluentd - from OpenShift/Origin logging-fluentd
-IPADDR4=`/usr/sbin/ip -4 addr show dev eth0 | grep inet | sed -e "s/[ \t]*inet \([0-9.]*\).*/\1/"`
-IPADDR6=`/usr/sbin/ip -6 addr show dev eth0 | grep inet6 | sed "s/[ \t]*inet6 \([a-f0-9:]*\).*/\1/"`
-export IPADDR4 IPADDR6
+#IPADDR4=`/usr/sbin/ip -4 addr show dev eth0 | grep inet | sed -e "s/[ \t]*inet \([0-9.]*\).*/\1/"`
+#IPADDR6=`/usr/sbin/ip -6 addr show dev eth0 | grep inet6 | sed "s/[ \t]*inet6 \([a-f0-9:]*\).*/\1/"`
+#export IPADDR4 IPADDR6
 
 # set up resource limits for fluentd - from OpenShift/Origin logging-fluentd
 BUFFER_SIZE_LIMIT=${BUFFER_SIZE_LIMIT:-1048576}
