@@ -19,6 +19,11 @@ PACKAGES="${PACKAGES} rh-ruby22 rh-ruby22-rubygems rh-ruby22-ruby-devel"
 RED_HAT_MATCH='^Red Hat.*$'
 echo $RELEASE
 echo $USE_SYSTEM_REPOS
+
+if [[ $RELEASE =~ $RED_HAT_MATCH ]]; then
+  echo "yay"
+fi
+
 if [[ $RELEASE =~ $RED_HAT_MATCH && -z "$USE_SYSTEM_REPOS" ]]; then
   echo "in the if"
   #NOTE: Until the first yum command is run, /etc/yum.repos.d/redhat.repo contains no repositories, so yum-config-manager will not enable/disable anything.
