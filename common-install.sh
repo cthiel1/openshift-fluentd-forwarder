@@ -21,7 +21,7 @@ echo $RELEASE
 echo $USE_SYSTEM_REPOS
 
 if [[ $RELEASE =~ $RED_HAT_MATCH ]]; then
-  echo "yay rar"
+  echo "yay rar change"
 fi
 
 if [[ $RELEASE =~ $RED_HAT_MATCH && -z "$USE_SYSTEM_REPOS" ]]; then
