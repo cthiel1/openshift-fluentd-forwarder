@@ -24,7 +24,8 @@ if [[ $RELEASE =~ $RED_HAT_MATCH ]]; then
   echo "yay rar change"
 fi
 
-if [[ $RELEASE =~ $RED_HAT_MATCH && -z "$USE_SYSTEM_REPOS" ]]; then
+#if [[ $RELEASE =~ $RED_HAT_MATCH && -z "$USE_SYSTEM_REPOS" ]]; then
+if [[ $RELEASE =~ $RED_HAT_MATCH ]]; then
   echo "in the if"
   #NOTE: Until the first yum command is run, /etc/yum.repos.d/redhat.repo contains no repositories, so yum-config-manager will not enable/disable anything.
   #This command will force the population of said file, see #https://access.redhat.com/solutions/1443553
