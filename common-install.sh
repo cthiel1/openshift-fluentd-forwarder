@@ -25,21 +25,21 @@ if [[ $RELEASE =~ $RED_HAT_MATCH ]]; then
 fi
 
 #if [[ $RELEASE =~ $RED_HAT_MATCH && -z "$USE_SYSTEM_REPOS" ]]; then
-if [[ $RELEASE =~ $RED_HAT_MATCH ]]; then
-  echo "in the if"
+#if [[ $RELEASE =~ $RED_HAT_MATCH ]]; then
+#  echo "in the if"
   #NOTE: Until the first yum command is run, /etc/yum.repos.d/redhat.repo contains no repositories, so yum-config-manager will not enable/disable anything.
   #This command will force the population of said file, see #https://access.redhat.com/solutions/1443553
-  yum repolist --disablerepo=* && yum-config-manager --disable \* > /dev/null
+#  yum repolist --disablerepo=* && yum-config-manager --disable \* > /dev/null
   #Set YUM_ARGS
-  YUM_ARGS="${YUM_ARGS} --enablerepo=rhel-7-server-rpms --enablerepo=rhel-server-rhscl-7-rpms --enablerepo=rhel-7-server-optional-rpms"
-fi
+#  YUM_ARGS="${YUM_ARGS} --enablerepo=rhel-7-server-rpms --enablerepo=rhel-server-rhscl-7-rpms --enablerepo=rhel-7-server-optional-rpms"
+#fi
 
 # enable epel when on CentOS
 CENTOS_MATCH='^CentOS.*'
-if [[ $RELEASE =~ $CENTOS_MATCH && -z "$USE_SYSTEM_REPOS" ]]; then
+#if [[ $RELEASE =~ $CENTOS_MATCH && -z "$USE_SYSTEM_REPOS" ]]; then
   rpmkeys --import file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
   yum install -y epel-release centos-release-scl-rh
-fi
+#fi
 
 # ensure latest versions
 yum update $YUM_ARGS -y
