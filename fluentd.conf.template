@@ -4,29 +4,18 @@
   bind 0.0.0.0
   port 24284
 
-  shared_key ${SHARED_KEY}
+ # shared_key ocpaggregatedloggingsharedkey (2)
 
-  secure           ${IS_SECURE}
-  enable_strict_verification ${STRICT_VERIFICATION}
-
-  ca_cert_path     ${CA_PATH}
-  cert_path        ${CERT_PATH}
-  private_key_path ${KEY_PATH}
-
-  private_key_passphrase ${KEY_PASSPHRASE}
+  #secure yes
+  #cert_path        /etc/td-agent/certs/ca_cert.pem (3)
+  #private_key_path /etc/td-agent/certs/ca_key.pem (4)
+  #private_key_passphrase ocpsecureforward (5)
 </source>
 
-<filter **>
-  @type record_transformer
-  <record>
-    forwarded_by "#{ENV['HOSTNAME']}"
-    source_component "OCP"
-  </record>
-</filter>
 
 <match **>
-  @type ${TARGET_TYPE}
-  host ${TARGET_HOST}
-  port ${TARGET_PORT}
-  ${ADDITIONAL_OPTS}
+   type splunk_ex
+   host 172.30.93.237
+   port 9998
+   output_format json
 </match>
