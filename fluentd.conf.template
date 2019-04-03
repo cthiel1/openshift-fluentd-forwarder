@@ -7,9 +7,9 @@
  # shared_key ocpaggregatedloggingsharedkey (2)
 
   secure yes
-  cert_path        /etc/td-agent/certs/ca_cert.pem (3)
-  private_key_path /etc/td-agent/certs/ca_key.pem (4)
-  private_key_passphrase ocpsecureforward (5)
+  cert_path        /etc/td-agent/certs/ca_cert.pem
+  private_key_path /etc/td-agent/certs/ca_key.pem
+  private_key_passphrase ocpsecureforward
 </source>
 
 
