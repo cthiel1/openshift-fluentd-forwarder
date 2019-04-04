@@ -70,5 +70,5 @@ export BUFFER_QUEUE_LIMIT BUFFER_SIZE_LIMIT
 if [[ $DEBUG ]] ; then
     exec fluentd $fluentdargs > /var/log/fluentd.log 2>&1
 else
-    exec fluentd $fluentdargs
+    exec fluentd -vv $fluentdargs
 fi
