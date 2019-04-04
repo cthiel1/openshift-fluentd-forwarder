@@ -55,6 +55,4 @@ RUN ls -la /etc/pki/tls/certs
 
 RUN ls -la /etc/pki/tls/private
 
-RUN ls -la /etc/td-agent/certs
-
 CMD ["sh", "run.sh"]
