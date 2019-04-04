@@ -47,6 +47,10 @@ WORKDIR ${HOME}
 # external port
 EXPOSE 24284
 
+RUN ls -la /etc/pki/tls
+
+RUN ls -la /etc/pki/tls/misc
+
 RUN ls -la /etc/pki/tls/certs
 
 RUN ls -la /etc/pki/tls/private
