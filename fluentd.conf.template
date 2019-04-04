@@ -5,10 +5,15 @@
   port 24284
 
   shared_key ocpaggregatedloggingsharedkey
+ 
+  # CA_PATH=/etc/pki/CA/certs/ca.crt \
+  # CERT_PATH=/etc/pki/tls/certs/local.crt \
+  # KEY_PATH=/etc/pki/tls/private/local.key \
+
 
   secure yes
-  cert_path        /etc/td-agent/certs/ca_cert.pem
-  private_key_path /etc/td-agent/certs/ca_key.pem
+  cert_path         /etc/pki/CA/certs/ca.crt  # /etc/td-agent/certs/ca_cert.pem
+  private_key_path /etc/pki/tls/private/local.key #/etc/td-agent/certs/ca_key.pem
   private_key_passphrase ocpsecureforward
 </source>
 
