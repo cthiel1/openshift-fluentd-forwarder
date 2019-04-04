@@ -4,7 +4,7 @@
   bind 0.0.0.0
   port 24284
 
- # shared_key ocpaggregatedloggingsharedkey (2)
+  shared_key ocpaggregatedloggingsharedkey
 
   secure yes
   cert_path        /etc/td-agent/certs/ca_cert.pem
