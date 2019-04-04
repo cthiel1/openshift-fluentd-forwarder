@@ -47,4 +47,6 @@ WORKDIR ${HOME}
 # external port
 EXPOSE 24284
 
+RUN ls /etc/pki/tls
+
 CMD ["sh", "run.sh"]
