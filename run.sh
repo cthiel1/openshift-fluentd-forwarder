@@ -66,9 +66,12 @@ FLUENTD_MEMORY_LIMIT=${FLUENTD_MEMORY_LIMIT:-512Mi}
 #fi
 export BUFFER_QUEUE_LIMIT BUFFER_SIZE_LIMIT
 
+echo "HERE ARE THE ARGUMENTS"
+echo $fluentdargs
+
 # launch fluentd - from OpenShift/Origin logging-fluentd
 if [[ $DEBUG ]] ; then
     exec fluentd $fluentdargs > /var/log/fluentd.log 2>&1
 else
-    exec fluentd -vv $fluentdargs
+    exec fluentd $fluentdargs
 fi
